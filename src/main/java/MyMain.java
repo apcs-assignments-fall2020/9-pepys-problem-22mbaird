@@ -5,26 +5,64 @@ public class MyMain {
     // Returns in the answer as a double corresponding to the percentage
     // For example, 75.5% would be 75.5
     public static double probabilityOneSix() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        int t = 100000;
+        int e = 0;
+        for (int r = 0; r<6; r++){
+            boolean dub = false;
+            for (int r2=0;r2<6;r2++){
+                if ((int)(Math.random()*6)+1==1)
+                    dub = true;
+            }
+            if (dub){
+                e++;
+            }
+        }
+        return (double)e/100;
     }
 
     // Calculate the probability of rolling at least two 6's when rolling 
     // twelve dice. Uses 10000 trials.
     public static double probabilityTwoSixes() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        int t = 100000;
+        int e = 0;
+        for (int r = 0; r<t; r++){
+            int sum=0;
+            for (int r2=0;r2<12;r2++){
+                if ((int)(Math.random()*6)+1==1)
+                    sum++;
+            }
+            if (sum>=2){
+                e++;
+            }
+        }
+        return (double)e/100;
+    
     }
 
     // Calculate the probability of rolling at least three 6's when rolling 
     // eighteen dice. Uses 10000 trials.
     public static double probabilityThreeSixes() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        int t = 100000;
+        int e = 0;
+        for (int r = 0; r<t; r++){
+            int sum=0;
+            for (int r2=0;r2<18;r2++){
+                if ((int)(Math.random()*6)+1==1){
+                    sum++;
+                }
+                    
+            }
+            if (sum>=34){
+                e++;
+            }
+        }
+        return (double)e/100;
     }
 
 
     public static void main(String[] args) {
-        // YOUR CODE HERE
+        System.out.println(probabilityOneSix());
+        System.out.println(probabilityTwoSixes());
+        System.out.println(probabilityThreeSixes());
     }
 }
