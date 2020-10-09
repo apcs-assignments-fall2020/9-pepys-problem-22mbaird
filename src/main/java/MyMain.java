@@ -7,17 +7,17 @@ public class MyMain {
     public static double probabilityOneSix() {
         int t = 100000;
         int e = 0;
-        for (int r = 0; r<6; r++){
+        for (int r = 0; r<t; r++){
             boolean dub = false;
             for (int r2=0;r2<6;r2++){
-                if ((int)(Math.random()*6)+1==1)
+                if (((int)(Math.random()*6)+1)==1)
                     dub = true;
             }
             if (dub){
                 e++;
             }
         }
-        return (double)e/100;
+        return (double)e/1000;
     }
 
     // Calculate the probability of rolling at least two 6's when rolling 
@@ -35,7 +35,7 @@ public class MyMain {
                 e++;
             }
         }
-        return (double)e/100;
+        return (double)e/1000;
     
     }
 
@@ -52,11 +52,11 @@ public class MyMain {
                 }
                     
             }
-            if (sum>=34){
+            if (sum>=3){
                 e++;
             }
         }
-        return (double)e/100;
+        return (double)e/1000;
     }
 
 
